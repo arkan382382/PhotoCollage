@@ -1,12 +1,12 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.xml.crypto.dsig.keyinfo.KeyValue;
 import java.awt.Image;
 import java.awt.font.ImageGraphicAttribute;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by arkan on 14.07.2017.
@@ -14,8 +14,12 @@ import java.util.Map;
 
 public class StorageOfSmallPictures {
     private int numberOfLoadedPictures = 0;
-    private double[] widthOfSmallPicture = new double[getNumberOfLoadedPhotos()];
-    private double[] heightOfSmallPicture = new double[getNumberOfLoadedPhotos()];
+
+    private double[] widthOfSmallPicture;
+    private double[] heightOfSmallPicture;
+    public StorageOfSmallPictures(){
+
+    }
     /*
         int width = 200;
         int height = 150;
@@ -44,6 +48,7 @@ public class StorageOfSmallPictures {
         this.setNumberOfLoadedPictures();
     }
 
+
 /*    Map<String, ImageGraphicAttribute> sizeSingleSmallPhotos = new HashMap<String, ImageGraphicAttribute>();
     public void setSizeOfSinglePicture(){
         iconMap.get(1).getIconHeight();
@@ -61,19 +66,41 @@ public class StorageOfSmallPictures {
         return numberOfLoadedPictures;
     }
 
-    public void setHeightOfSmallPicture(){                  // do konstruktora
-        for(int i=1; i<numberOfLoadedPictures; i++){
-            heightOfSmallPicture[i] = iconMap.get(i).getIconHeight();
+    public void setHeightAndWidthOfSmallPicture(){// do konstruktora
+        /*for(int i=0; i<numberOfLoadedPictures; i++){
+            this.heightOfSmallPicture[i] = iconMap.get(i).getIconHeight();
+        }*/
+        heightOfSmallPicture = new double [getNumberOfLoadedPhotos()];
+        widthOfSmallPicture = new double [getNumberOfLoadedPhotos()];
+        int i=0;
+        Iterator it = iconMap.entrySet().iterator();
+        while(it.hasNext()){
+            Map.Entry<String, ImageIcon> pair = (Map.Entry)it.next();
+         //   System.out.println("key: " + pair.getKey() + "value: " + pair.getValue())
+            heightOfSmallPicture[i] = (pair.getValue().getIconHeight());
+            widthOfSmallPicture[i] = (pair.getValue().getIconWidth());
+            i++;
+            it.remove();
         }
     }
-    public void setWidthOfSmallPicture(){
-        for(int i=0; i<numberOfLoadedPictures; i++){        // do konstruktora
-            widthOfSmallPicture[i] = iconMap.get(i).getIconWidth();
+
+  /*  public void setWidthOfSmallPicture(){
+        widthOfSmallPicture = new double [getNumberOfLoadedPhotos()];
+        int i=0;
+        Iterator it2 = iconMap.entrySet().iterator();
+        while(it2.hasNext()){
+            Map.Entry<String, ImageIcon> pair2 = (Map.Entry)it2.next();
+            //   System.out.println("key: " + pair.getKey() + "value: " + pair.getValue())
+            widthOfSmallPicture[i] = (pair2.getValue().getIconWidth());
+            i++;
+            it2.remove();
         }
     }
+*/
     public double getHeightOfSmallPicture(int whichOnePicture){
         return heightOfSmallPicture[whichOnePicture];
     }
+
     public double getWidthOfSmallPicture(int whichOnePicture){
         return widthOfSmallPicture[whichOnePicture];
     }

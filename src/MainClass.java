@@ -1,26 +1,30 @@
-import javax.imageio.ImageIO;
-import javax.swing.*;
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * Created by arkan on 14.07.2017.
  * pobieranie i wyswietlanie obrazka: https://javastart.pl/static/grafika_awt_swing/pobieranie-i-wyswietlanie-obrazow/
  */
 public class MainClass {
     public static void main(String[] argc) {
-        System.out.println("test");
+
         StorageOfSmallPictures smallPictures = new StorageOfSmallPictures();
         smallPictures.readPicturesFromDirectory();
-        System.out.println("small pictures: " + smallPictures.getNumberOfLoadedPhotos());
 
-        FinalPicture finallPicture = new FinalPicture();
-        finallPicture.setSizeOfFinalPicture(smallPictures.getNumberOfLoadedPhotos());
+     //   System.out.println("small pictures: " + smallPictures.getNumberOfLoadedPhotos());
+
+        FinalPicture finalPicture = new FinalPicture();
+        finalPicture.setSizeOfFinalPicture(smallPictures.getNumberOfLoadedPhotos());
+       // finalPicture.createMatrix();
+
+         System.out.println( smallPictures.getNumberOfLoadedPhotos() );
+
+        smallPictures.setHeightAndWidthOfSmallPicture();
+
+        for(int i=0; i<(smallPictures.getNumberOfLoadedPhotos()); i++){
+            System.out.print(smallPictures.getHeightOfSmallPicture(i) + " ");
+            System.out.print(smallPictures.getWidthOfSmallPicture(i) + " \n");
+        }
+
+        System.out.println("Screen width: " + finalPicture.getWidthOfScreenOnPc());
+        System.out.println("FinalPicture width: " + finalPicture.getWidthOfFinalPicture());
 
     /*    int width = 200;
         int height = 150;
@@ -62,6 +66,18 @@ public class MainClass {
 */
       //  System.out.println(iconMap.size());
 
+/*
+        int size = 12;
+        int row = 1;
+        int column = 1;
 
+        do{
+            row++;
+            if((row*column) < size){
+                column++;
+            }
+        }while((row*column) < size);
 
+        System.out.println("Column: " + column + "row: " + row);
+        */
     }}

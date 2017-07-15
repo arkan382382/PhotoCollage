@@ -16,8 +16,9 @@ Problem 1. How to manage suitable matrix for loaded pictures?
             col++;
         }
     }while(result < numberOfPicture)
-
+    Solved.
 Problem 2. How to load pictures from folder to vector/tab or diferent structure?
+    Solved: Files loaded to hashmap<String, ImageIcon>
 
 Problem 3. How to resize pictures to appropriate size?
     Get screen Height and Width.
@@ -30,3 +31,4 @@ Problem 4. How to create matrix for main Picture? Jpanel etc.
 
 Problem 5. Okreslic zmienną "szerokosc wszystkich zdjec" + "wysokosc wszystkich zdjec" po przeniesieniu do macieży, lub przed przeniesieniem
     chodzi o określenie ile będzie slotów na zdjęcia ( slotów w dużym obrazie FinalPicture ).
+    Solved: finalWitdhOfsmallPicture = widthOfFinalPicture/cellshorizontal and the same to width

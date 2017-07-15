@@ -24,6 +24,6 @@ Problem 3. How to resize pictures to appropriate size?
     Create new values - for example 0,8 Height and 0,8 Width.
     Check new values for height and width small picture: 0,8Height/row and 0,8Width/column or reverse.
 
-    
+
 
 Problem 4. How to create matrix for main Picture? Jpanel etc.

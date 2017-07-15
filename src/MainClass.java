@@ -19,7 +19,7 @@ public class MainClass {
         smallPictures.setHeightAndWidthOfSmallPicture();
 
         for(int i=0; i<(smallPictures.getNumberOfLoadedPhotos()); i++){
-            System.out.print(smallPictures.getHeightOfSmallPicture(i) + " ");
+            System.out.print(smallPictures.getHeightOfSmallPicture(i) + "  ");
             System.out.print(smallPictures.getWidthOfSmallPicture(i) + " \n");
         }
 

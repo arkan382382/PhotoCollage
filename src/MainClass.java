@@ -11,7 +11,7 @@ public class MainClass {
      //   System.out.println("small pictures: " + smallPictures.getNumberOfLoadedPhotos());
 
         FinalPicture finalPicture = new FinalPicture();
-        finalPicture.setSizeOfFinalPicture(smallPictures.getNumberOfLoadedPhotos());
+      //  finalPicture.setSizeOfFinalPicture(smallPictures.getNumberOfLoadedPhotos());
        // finalPicture.createMatrix();
 
          System.out.println( smallPictures.getNumberOfLoadedPhotos() );
@@ -26,6 +26,8 @@ public class MainClass {
         System.out.println("Screen width: " + finalPicture.getWidthOfScreenOnPc());
         System.out.println("FinalPicture width: " + finalPicture.getWidthOfFinalPicture());
 
+        finalPicture.setSizeOfFinalPicture(smallPictures.getNumberOfLoadedPhotos(), smallPictures);
+        System.out.println(finalPicture.getCellsHorizontally() + " " + finalPicture.getCellsVertically());
     /*    int width = 200;
         int height = 150;
         BufferedImage image = null;

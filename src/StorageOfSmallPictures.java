@@ -17,6 +17,8 @@ public class StorageOfSmallPictures {
 
     private double[] widthOfSmallPicture;
     private double[] heightOfSmallPicture;
+    private double[] finalWidthOfSmallPicture;
+    private double[] finalHeightOfSmallPicture;
     public StorageOfSmallPictures(){
 
     }
@@ -83,7 +85,14 @@ public class StorageOfSmallPictures {
             it.remove();
         }
     }
+/*
+    public void setFinalWidthAndHeightOfSmallPicture(FinalPicture temporary){
+        finalHeightOfSmallPicture = new double[getNumberOfLoadedPhotos()];
+        finalWidthOfSmallPicture = new double[getNumberOfLoadedPhotos()];
+        int i = 0;
 
+    }
+    */
   /*  public void setWidthOfSmallPicture(){
         widthOfSmallPicture = new double [getNumberOfLoadedPhotos()];
         int i=0;

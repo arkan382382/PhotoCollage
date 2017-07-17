@@ -68,7 +68,7 @@ public class StorageOfSmallPictures {
         return numberOfLoadedPictures;
     }
 
-    public void setHeightAndWidthOfSmallPicture(){// do konstruktora
+    public void setHeightAndWidthOfSmallPicture(){// do konstruktora                    ##CHANGE NAME TO GET -> ###
         /*for(int i=0; i<numberOfLoadedPictures; i++){
             this.heightOfSmallPicture[i] = iconMap.get(i).getIconHeight();
         }*/

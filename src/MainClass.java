@@ -30,7 +30,7 @@ public class MainClass {
         System.out.println(finalPicture.getCellsHorizontally() + " " + finalPicture.getCellsVertically());
         System.out.println("Final picture cells: " + finalPicture.cellsVertically + " " + finalPicture.cellsHorizontally); //chyba zyebałem - podwojony dostęp
 
-        finalPicture.prepareFinalBackground(finalPicture.cellsVertically, finalPicture.cellsHorizontally, smallPictures);
+        finalPicture.prepareFinalBackground(finalPicture.cellsVertically, finalPicture.cellsHorizontally, smallPictures, finalPicture);
 
     /*    int width = 200;
         int height = 150;

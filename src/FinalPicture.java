@@ -34,8 +34,10 @@ public class FinalPicture {
         } while ((toCells.cellsHorizontally * toCells.cellsVertically) < numberOfTinyPhotos);
     }
 
-    public void prepareFinalBackground(int cellsVertically_pion, int cellsHorizontally_poziom, StorageOfSmallPictures tempSmall){
-
+    public void prepareFinalBackground(int cellsVertically_pion, int cellsHorizontally_poziom, StorageOfSmallPictures tempSmall, FinalPicture a){
+        //zmienna szerokości małego obrazka tempSmall.= getWidthOfFinalPicture()/cellsHorizontally_poziom; //szerokosć
+        tempSmall.setFinalWidthOfSmallPicture(a.getWidthOfFinalPicture()/cellsHorizontally_poziom);         // - rozmiar pojedynczego małego obrazu do skalowania w poziomie
+        tempSmall.setFinalHeightOfSmallPicture(a.getHeightOfFinalPicture()/cellsVertically_pion);           // - rozmiar pojedynczego obrazu do skalowania w pionie
     }
 
         /*do{

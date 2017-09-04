@@ -31,6 +31,9 @@ public class MainClass {
         System.out.println("Final picture cells: " + finalPicture.cellsVertically + " " + finalPicture.cellsHorizontally); //chyba zyebałem - podwojony dostęp
 
         finalPicture.prepareFinalBackground(finalPicture.cellsVertically, finalPicture.cellsHorizontally, smallPictures, finalPicture);
+        //1. skalowanie pobranych obrazów do otrzymanej wartości (finalWidthOfSmallPicture)
+        //2. Upakowanie obrazów w wierszach i kolumnach ( tyle w wierszu ile cellsVertically, tyle w kolumnie ile w horizontally)
+        //3. Wyświetlenie otrzymanego obrazu
 
     /*    int width = 200;
         int height = 150;

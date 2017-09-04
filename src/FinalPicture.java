@@ -19,19 +19,24 @@ public class FinalPicture {
 
     StorageOfSmallPictures smallPicturesTemp = new StorageOfSmallPictures();
 
-    public void setSizeOfFinalPicture(int numberOfTinyPhotos, StorageOfSmallPictures xANDy){
-     //   numberOfTinyPhotos = smallPicturesTemp.getNumberOfLoadedPhotos();
+    public void setNumberOfPictureInRowsAndColumns(int numberOfTinyPhotos, StorageOfSmallPictures xANDy, FinalPicture toCells) {
+        //   numberOfTinyPhotos = smallPicturesTemp.getNumberOfLoadedPhotos();
         System.out.println("from finalClass: " + numberOfTinyPhotos);
         // miejsce na algorytm okreslający rozmiar macieży
-        do{
-            cellsVertically++;{
-                if((cellsHorizontally * cellsVertically) < numberOfTinyPhotos){
-                    cellsHorizontally++;
+        do {
+            toCells.cellsVertically++;
+            //cellsVertically++;
+            {
+                if ((toCells.cellsHorizontally * toCells.cellsVertically) < numberOfTinyPhotos) {
+                    toCells.cellsHorizontally++;
                 }
             }
-        }while((cellsHorizontally * cellsVertically) < numberOfTinyPhotos);
+        } while ((toCells.cellsHorizontally * toCells.cellsVertically) < numberOfTinyPhotos);
+    }
 
+    public void prepareFinalBackground(int cellsVertically_pion, int cellsHorizontally_poziom, StorageOfSmallPictures tempSmall){
 
+    }
 
         /*do{
             row++;
@@ -39,8 +44,8 @@ public class FinalPicture {
                 column++;
             }                                       horiz - poziom, vert - pion
         }while((row*column) < size); */
-    }
 
+/*
     public void createMatrix(int cellsHorizontally, int cellsVertically, int numberOfTinyPhotos) {
         do {
             cellsHorizontally++;
@@ -49,7 +54,7 @@ public class FinalPicture {
             }
         } while ((cellsHorizontally * cellsVertically) < numberOfTinyPhotos);
     }
-
+*/
     public double getWidthOfScreenOnPc(){
         return widthOfScreenOnPC;
     }

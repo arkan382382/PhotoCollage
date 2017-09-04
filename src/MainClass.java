@@ -11,7 +11,7 @@ public class MainClass {
      //   System.out.println("small pictures: " + smallPictures.getNumberOfLoadedPhotos());
 
         FinalPicture finalPicture = new FinalPicture();
-      //  finalPicture.setSizeOfFinalPicture(smallPictures.getNumberOfLoadedPhotos());
+      //  finalPicture.setNumberOfPictureInRowsAndColumns(smallPictures.getNumberOfLoadedPhotos());
        // finalPicture.createMatrix();
 
          System.out.println( smallPictures.getNumberOfLoadedPhotos() );
@@ -26,8 +26,12 @@ public class MainClass {
         System.out.println("Screen width: " + finalPicture.getWidthOfScreenOnPc());
         System.out.println("FinalPicture width: " + finalPicture.getWidthOfFinalPicture());
 
-        finalPicture.setSizeOfFinalPicture(smallPictures.getNumberOfLoadedPhotos(), smallPictures);
+        finalPicture.setNumberOfPictureInRowsAndColumns(smallPictures.getNumberOfLoadedPhotos(), smallPictures, finalPicture);
         System.out.println(finalPicture.getCellsHorizontally() + " " + finalPicture.getCellsVertically());
+        System.out.println("Final picture cells: " + finalPicture.cellsVertically + " " + finalPicture.cellsHorizontally); //chyba zyebałem - podwojony dostęp
+
+        finalPicture.prepareFinalBackground(finalPicture.cellsVertically, finalPicture.cellsHorizontally, smallPictures);
+
     /*    int width = 200;
         int height = 150;
         BufferedImage image = null;

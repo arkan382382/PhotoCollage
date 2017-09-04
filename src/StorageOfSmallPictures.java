@@ -17,8 +17,8 @@ public class StorageOfSmallPictures {
 
     private double[] widthOfSmallPicture;
     private double[] heightOfSmallPicture;
-    private double[] finalWidthOfSmallPicture;
-    private double[] finalHeightOfSmallPicture;
+    private double finalWidthOfSmallPicture;
+    private double finalHeightOfSmallPicture;
     public StorageOfSmallPictures(){
 
     }
@@ -112,5 +112,13 @@ public class StorageOfSmallPictures {
 
     public double getWidthOfSmallPicture(int whichOnePicture){
         return widthOfSmallPicture[whichOnePicture];
+    }
+
+    public void setFinalWidthOfSmallPicture(double finalWidthOfSmallPicture){
+        this.finalWidthOfSmallPicture = finalWidthOfSmallPicture;
+    }
+    
+    public void setFinalHeightOfSmallPicture(double finalHeightOfSmallPicture){
+        this.finalHeightOfSmallPicture = finalHeightOfSmallPicture;
     }
 }

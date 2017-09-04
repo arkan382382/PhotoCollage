@@ -117,7 +117,7 @@ public class StorageOfSmallPictures {
     public void setFinalWidthOfSmallPicture(double finalWidthOfSmallPicture){
         this.finalWidthOfSmallPicture = finalWidthOfSmallPicture;
     }
-//
+
     public void setFinalHeightOfSmallPicture(double finalHeightOfSmallPicture){
         this.finalHeightOfSmallPicture = finalHeightOfSmallPicture;
     }

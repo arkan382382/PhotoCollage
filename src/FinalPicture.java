@@ -40,6 +40,7 @@ public class FinalPicture {
         tempSmall.setFinalHeightOfSmallPicture(a.getHeightOfFinalPicture()/cellsVertically_pion);           // - rozmiar pojedynczego obrazu do skalowania w pionie
     }
 
+
         /*do{
             row++;
             if((row*column) < size){

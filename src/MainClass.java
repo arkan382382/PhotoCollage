@@ -35,6 +35,10 @@ public class MainClass {
         //2. Upakowanie obrazów w wierszach i kolumnach ( tyle w wierszu ile cellsVertically, tyle w kolumnie ile w horizontally)
         //3. Wyświetlenie otrzymanego obrazu
 
+        // https://javastart.pl/static/iv-grafika-awt-i-swing/rozwiazanie-4-1/ -- zapis kilku obrazów  drawimage xy
+        //if x == szerokosc (x=0; y++)  <== aby zaczęło wstawiać obrazki poniżej. X i Y muszą być szerokościami obrazu. Uwzględnić też ilość w pionie i poziomie
+
+
     /*    int width = 200;
         int height = 150;
         BufferedImage image = null;

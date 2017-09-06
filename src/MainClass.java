@@ -59,15 +59,35 @@ public class MainClass {
                 iconMap.put(file.getName(), new ImageIcon(file.getPath()));
             }
         }
+
         //Tworzenie finalnego miejsca na obrazy
         int width, height;
-        width = (int) (smallPictures.getWidthOfSmallPicture(1) * finalPicture.cellsHorizontally);
-        height = (int) (smallPictures.getHeightOfSmallPicture(1) * finalPicture.cellsVertically);
+        width = (int) (smallPictures.getWidthOfSmallPicture(0) * finalPicture.cellsHorizontally);
+        height = (int) (smallPictures.getHeightOfSmallPicture(0) * finalPicture.cellsVertically);
         BufferedImage result = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
         Graphics g = result.getGraphics();
 
         System.out.println("width: " + width);
         System.out.println("height: " + height);
+
+        // buffered image - wczytanie wszystkich obrazów pojedynczo
+        // łączenie ich względem zmiennych ze starego programu
+        /* poniżej działające pobieranie i zapisywanie nowego
+
+        BufferedImage result = new BufferedImage(1000, 1000, BufferedImage.TYPE_INT_RGB);
+        Graphics g = result.getGraphics();
+
+        BufferedImage bi = ImageIO.read(new File("D:\\zrodlo\\test.jpg"));
+        g.drawImage(bi, 0, 0, null);
+        g.drawImage(bi, bi.getWidth(), 0, null);
+        g.drawImage(bi, 0, bi.getHeight(), null);
+        g.drawImage(bi, bi.getWidth(), bi.getHeight(), null);
+
+        ImageIO.write(result, "jpg", new File("D:\\zrodlo\\result.jpg"));
+
+         */
+
+
 
 
         // https://javastart.pl/static/iv-grafika-awt-i-swing/rozwiazanie-4-1/ -- zapis kilku obrazów  drawimage xy

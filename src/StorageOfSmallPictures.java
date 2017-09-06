@@ -39,15 +39,41 @@ public class StorageOfSmallPictures {
     */
     Map<String, ImageIcon> iconMap = new HashMap<String, ImageIcon>();
 
+
     public void readPicturesFromDirectory() {
         File directory = new File("D:\\zrodlo\\");
-
         for (File file : directory.listFiles()) {
             if (file.getName().toLowerCase().endsWith(".jpg")) {
                 iconMap.put(file.getName(), new ImageIcon(file.getPath()));
             }
         }
         this.setNumberOfLoadedPictures();
+    }
+
+    public void readPictureForMainClass(Map<String, ImageIcon> t){
+        File directory = new File("D:\\zrodlo\\");
+        for (File file : directory.listFiles()) {
+            if (file.getName().toLowerCase().endsWith(".jpg")) {
+                t.put(file.getName(), new ImageIcon(file.getPath()));
+            }
+        }
+    }
+
+    //do sprawdzenia przy pobieraniu pliku do
+    public Map sendMap(){
+        return this.iconMap;
+    }
+    public void downloadPicture() {
+        /*
+        File path = new File("D:\\zrodlo\\");
+        List imageCollection = new ArrayList();
+        File [] files = path.listFiles();
+        for (int i = 0; i < files.length; i++){
+            if (files[i].isFile()){ //this line weeds out other directories/folders
+                imageCollection.add(loadImage(files[i]));
+        }
+        }
+         */
     }
 
 

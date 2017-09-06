@@ -1,12 +1,21 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 
 import static java.awt.SystemColor.window;
 
 /**
  * Created by arkan on 05.09.2017.
  */
-//public class Shower extends JFrame implements Runnable  {
+//public class Shower extends JPanel  {
+ //   public void paintComponent(Graphics g){}
+    /*    StorageOfSmallPictures small = new StorageOfSmallPictures();
+        private BufferedImage diskImage;
+
+        Graphics2D g2d = (Graphics2D) g;
+        g2d.drawImage();
+    }
+}
 /*    FinalPicture finalForValues = new FinalPicture();
     JFrame b[][] = new JFrame[finalForValues.getCellsVertically()][finalForValues.getCellsHorizontally()];
     public Shower(String title, JFrame window){
@@ -18,7 +27,7 @@ import static java.awt.SystemColor.window;
     public void run(){
 
     }
-    */
+
     /*JPanel panel;
     JFrame window;
     FinalPicture finalForValues = new FinalPicture();

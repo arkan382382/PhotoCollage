@@ -1,5 +1,6 @@
 import javax.tools.Tool;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 
 /**
  * Created by arkan on 15.07.2017.
@@ -38,6 +39,14 @@ public class FinalPicture {
         //zmienna szerokości małego obrazka tempSmall.= getWidthOfFinalPicture()/cellsHorizontally_poziom; //szerokosć
         tempSmall.setFinalWidthOfSmallPicture(a.getWidthOfFinalPicture()/cellsHorizontally_poziom);         // - rozmiar pojedynczego małego obrazu do skalowania w poziomie
         tempSmall.setFinalHeightOfSmallPicture(a.getHeightOfFinalPicture()/cellsVertically_pion);           // - rozmiar pojedynczego obrazu do skalowania w pionie
+    }
+
+    public void BackgroudForEndPicture(){
+        int width, height;
+        width = (int) (smallPicturesTemp.getWidthOfSmallPicture(1) * this.cellsHorizontally);
+        height = (int) (smallPicturesTemp.getHeightOfSmallPicture(1) * this.cellsVertically);
+        BufferedImage result = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+        Graphics g = result.getGraphics();
     }
 
 

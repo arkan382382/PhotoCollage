@@ -1,3 +1,11 @@
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by arkan on 14.07.2017.
  * pobieranie i wyswietlanie obrazka: https://javastart.pl/static/grafika_awt_swing/pobieranie-i-wyswietlanie-obrazow/
@@ -35,7 +43,32 @@ public class MainClass {
         //2. Upakowanie obrazów w wierszach i kolumnach ( tyle w wierszu ile cellsVertically, tyle w kolumnie ile w horizontally)
         //3. Wyświetlenie otrzymanego obrazu
         //4. Pobranie adresów plików do programu i wklejenie ich do nowego obszaru roboczego
-        
+
+        smallPictures.readPictureForMainClass(smallPictures.iconMap);
+
+        System.out.println("isempty: " + smallPictures.iconMap.size());
+
+        System.out.println("isempty: " + smallPictures.sendMap().size());
+
+        //finalPicture.BackgroudForEndPicture();
+
+        Map<String, ImageIcon> iconMap = new HashMap<String, ImageIcon>();
+        File directory = new File("D:\\zrodlo\\");
+        for (File file : directory.listFiles()) {
+            if (file.getName().toLowerCase().endsWith(".jpg")) {
+                iconMap.put(file.getName(), new ImageIcon(file.getPath()));
+            }
+        }
+        //Tworzenie finalnego miejsca na obrazy
+        int width, height;
+        width = (int) (smallPictures.getWidthOfSmallPicture(1) * finalPicture.cellsHorizontally);
+        height = (int) (smallPictures.getHeightOfSmallPicture(1) * finalPicture.cellsVertically);
+        BufferedImage result = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+        Graphics g = result.getGraphics();
+
+        System.out.println("width: " + width);
+        System.out.println("height: " + height);
+
 
         // https://javastart.pl/static/iv-grafika-awt-i-swing/rozwiazanie-4-1/ -- zapis kilku obrazów  drawimage xy
         //if x == szerokosc (x=0; y++)  <== aby zaczęło wstawiać obrazki poniżej. X i Y muszą być szerokościami obrazu. Uwzględnić też ilość w pionie i poziomie

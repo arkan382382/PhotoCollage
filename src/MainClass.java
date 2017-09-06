@@ -3,6 +3,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,7 +12,7 @@ import java.util.Map;
  * pobieranie i wyswietlanie obrazka: https://javastart.pl/static/grafika_awt_swing/pobieranie-i-wyswietlanie-obrazow/
  */
 public class MainClass {
-    public static void main(String[] argc) {
+    public static void main(String[] argc) throws IOException {
 
         StorageOfSmallPictures smallPictures = new StorageOfSmallPictures();
         smallPictures.readPicturesFromDirectory();
@@ -59,6 +60,28 @@ public class MainClass {
                 iconMap.put(file.getName(), new ImageIcon(file.getPath()));
             }
         }
+
+        //test <String BufferedImage> lub <String, IO>
+        Map<String, BufferedImage> iconMap2 = new HashMap<String, BufferedImage>();
+        File dir = new File("D:\\zrodlo\\");
+        for (File file : dir.listFiles()) {
+            if (file.getName().toLowerCase().endsWith(".jpg")) {
+                iconMap2.put(file.getName(), new BufferedImage(200, 200, BufferedImage.TYPE_3BYTE_BGR));
+            }
+        }
+        BufferedImage bibi = iconMap2.get(0);
+        BufferedImage bibi2 = iconMap2.get(1);
+        BufferedImage bibi3 = iconMap2.get(2);
+        BufferedImage bibi4 = iconMap2.get(3);
+        BufferedImage RESULT = new BufferedImage(1000, 1000, BufferedImage.TYPE_INT_RGB);
+        Graphics gg = RESULT.getGraphics();
+        gg.drawImage(bibi, 0, 0, null);
+        gg.drawImage(bibi2, 200, 0, null);
+        gg.drawImage(bibi3, 80, 0, null);
+        gg.drawImage(bibi4, 20, 20, null);
+        ImageIO.write(RESULT, "jpg", new File("D:\\zrodlo\\result.jpg"));
+// nie działa;(
+        System.out.println("HOW MANY? " + iconMap2.size());
 
         //Tworzenie finalnego miejsca na obrazy
         int width, height;
